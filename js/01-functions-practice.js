@@ -41,15 +41,26 @@
 
 //////// STEP 5 ////////
 //Create a JavaScript function that accepts a certain amount of numbers as parameters. Those numbers should be collected using a prompt and the numbers should be delimited by commas. Once the values are collected, find the sum of all of the numbers combined. You will need to use a function, loop, arguments object, and several type conversion global functions to accomplish this task.
-//function addNum(listNums){
-//    "use strict";
-//    var sum = 0;
-//    var arr;
-//    
+function sum(input){
+    "use strict";
+    var total = 0;
+    var arr = input.split(",");
+    
+    window.console.log("Before String: \"" + input + "\"");
+    window.console.log("After String:  \"" + arr + "\"");
+    window.console.log("Arr an Array:  \"" + (Array.isArray(arr)) + "\"");
+    window.console.log("Arr:  \"" + (arr) + "\"");
+    window.console.log(arr[2]);
+    window.console.log(arr.length);
 //De-String Them
     //Split them from the commas
-    //listNums = listNums.split(',');
-    
+    for (var i = 0; i < arr.length; i++){
+        window.console.log(arr[i]);
+        arr[i]=arr[i].trim();
+        window.console.log(arr[i]);
+        total+=parseFloat(arr[i]);
+    }
+    window.console.log("Total:  \"" + (total) + "\"");
     //Remove any spaces
         //Check to see if each array list has a space or not.
         //If it doesn't do nothing
@@ -60,14 +71,50 @@
     
     //For Loop Array to add them together
     
-//    return sum;
-//}
-var numbs = window.prompt("Please enter a list of numbers, followed by a comma."); //Debug
-//4, 566, 4456, 6654, 566 5, 655, 6
-window.console.log("String: \"" + numbs + "\"");
+    return total;
+}
 
-window.console.log(numbs.split(','));
-//window.console.log(addNum(numbs));
+
+//Debug
+// 4,25,5, 30,7, 566, 4456, 6654, 566 5, 655, 6
+// 4,25,5, 30,7, 566, 4456, 6654, 5665, 655, 6
+// 4,3,46,86,5768,546
+
+sum(window.prompt("Please enter a list of numbers, followed by a comma.")); 
+
+
+
+///This works....
+/*
+//this is in the function
+
+
+    
+    window.console.log("Before String: \"" + input + "\"");
+    window.console.log("After String:  \"" + arr + "\"");
+    window.console.log("Arr an Array:  \"" + (Array.isArray(arr)) + "\"");
+    window.console.log("Arr:  \"" + (arr) + "\"");
+    window.console.log(arr[2]);
+    window.console.log(arr.length);
+
+
+//^in the function
+
+
+
+
+
+
+var input = window.prompt("Please enter a list of numbers, followed by a comma.");
+window.console.log("Before String: \"" + input + "\"");
+var arr = input.split(",");
+////var arr = [1, 2, 3, 4];
+window.console.log("After String:  \"" + (Array.isArray(arr)) + "\"");
+window.console.log("After String:  \"" + (arr) + "\"");
+window.console.log(arr[2]);
+
+
+*/
 
 
 
